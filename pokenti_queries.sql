@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS evolutions;
 DROP TABLE IF EXISTS party_pokemons;
 DROP TABLE IF EXISTS pc_boxs;
 DROP TABLE IF EXISTS stats;
+DROP TABLE IF EXISTS moves;
 DROP TABLE IF EXISTS pokemons;
 DROP TABLE IF EXISTS types;
 
@@ -169,6 +170,46 @@ INSERT INTO evolutions(at_level, id_pokemon) VALUES (60,11);
 INSERT INTO evolutions(at_level, id_pokemon) VALUES (20,12);
 INSERT INTO evolutions(at_level, id_pokemon) VALUES (29,15);
 INSERT INTO evolutions(at_level, id_pokemon) VALUES (40,15);
+
+CREATE TABLE moves (
+	id_move INT UNSIGNED NOT NULL AUTO:INCREMENT PRIMARY KEY,
+	name VARCHAR(24) NOT NULL,
+	id_pokemon INT UNSIGNED NOT NULL,
+	FOREIGN KEY (id_pokemon) REFERENCES pokemons (id_pokemon)
+);
+
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Draco Meteor", 1);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Fly", 16);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Cut", 15);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Nightmare", 2);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Double Team", 12);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Haze", 8);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Focus Punch", 5);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Swagger", 9);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Disable", 13);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Ember", 3);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Psybeam", 4);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Surf", 6);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Lick", 7);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Thunder", 10);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Fissure", 11);
+INSERT INTO moves(name,id_pokemon)
+VALUES ("Sandstrom", 14);
 
 DELIMITER ;
 
