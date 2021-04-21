@@ -172,7 +172,7 @@ INSERT INTO evolutions(at_level, id_pokemon) VALUES (29,15);
 INSERT INTO evolutions(at_level, id_pokemon) VALUES (40,15);
 
 CREATE TABLE moves (
-	id_move INT UNSIGNED NOT NULL AUTO:INCREMENT PRIMARY KEY,
+	id_move INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(24) NOT NULL,
 	id_pokemon INT UNSIGNED NOT NULL,
 	FOREIGN KEY (id_pokemon) REFERENCES pokemons (id_pokemon)
